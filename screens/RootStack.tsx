@@ -1,16 +1,29 @@
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import HomeMain from '../components/home/HomeMain';
+import HomeStack from './HomeStack';
 
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 const RootStack = () => {
   return (
-    <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen name="Home" component={HomeMain} />
-    </Stack.Navigator>
+    <Tab.Navigator initialRouteName="Home">
+      <Tab.Screen name="Home" component={HomeStack} />
+    </Tab.Navigator>
   );
 };
 
 export default RootStack;
+
+// import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+
+// const Tab = createBottomTabNavigator();
+
+// function MyTabs() {
+//   return (
+//     <Tab.Navigator>
+//       <Tab.Screen name="Home" component={HomeScreen} />
+//       <Tab.Screen name="Settings" component={SettingsScreen} />
+//     </Tab.Navigator>
+//   );
+// }
