@@ -1,5 +1,6 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import HomeStack from './HomeStack';
 
@@ -13,6 +14,10 @@ const RootStack = () => {
         component={HomeStack}
         options={{
           headerShown: false,
+          title: '홈',
+          tabBarIcon: ({color, size}) => (
+            <Icon name="home" color={color} size={size} />
+          ),
         }}
       />
     </Tab.Navigator>
