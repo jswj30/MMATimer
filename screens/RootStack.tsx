@@ -3,6 +3,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import HomeStack from './HomeStack';
+import TrainingStack from './TrainingStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -15,6 +16,17 @@ const RootStack = () => {
         options={{
           headerShown: false,
           title: '홈',
+          tabBarIcon: ({color, size}) => (
+            <Icon name="home" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Training"
+        component={TrainingStack}
+        options={{
+          headerShown: false,
+          title: '트레이닝',
           tabBarIcon: ({color, size}) => (
             <Icon name="home" color={color} size={size} />
           ),
