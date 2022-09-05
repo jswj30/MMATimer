@@ -15,9 +15,9 @@ const RootStack = () => {
         component={HomeStack}
         options={{
           headerShown: false,
-          title: '홈',
+          title: 'Home',
           tabBarIcon: ({color, size}) => (
-            <Icon name="home" color={color} size={size} />
+            <Icon name="access-alarm" color={color} size={size} />
           ),
         }}
       />
@@ -26,9 +26,9 @@ const RootStack = () => {
         component={TrainingStack}
         options={{
           headerShown: false,
-          title: '트레이닝',
+          title: 'Training',
           tabBarIcon: ({color, size}) => (
-            <Icon name="home" color={color} size={size} />
+            <Icon name="sports-mma" color={color} size={size} />
           ),
         }}
       />
@@ -37,16 +37,3 @@ const RootStack = () => {
 };
 
 export default RootStack;
-
-// import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-
-// const Tab = createBottomTabNavigator();
-
-// function MyTabs() {
-//   return (
-//     <Tab.Navigator>
-//       <Tab.Screen name="Home" component={HomeScreen} />
-//       <Tab.Screen name="Settings" component={SettingsScreen} />
-//     </Tab.Navigator>
-//   );
-// }
