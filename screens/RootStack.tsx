@@ -9,7 +9,11 @@ const Tab = createBottomTabNavigator();
 
 const RootStack = () => {
   return (
-    <Tab.Navigator initialRouteName="Home">
+    <Tab.Navigator
+      initialRouteName="Home"
+      screenOptions={({route}) => ({
+        tabBarActiveTintColor: '#d61d36',
+      })}>
       <Tab.Screen
         name="Home"
         component={HomeStack}
