@@ -6,7 +6,7 @@ const HomeMain = () => {
   const [running, setRunning] = useState(false);
 
   useEffect(() => {
-    let interval;
+    let interval: any;
     if (running) {
       interval = setInterval(() => {
         setTime(prevTime => prevTime + 10);
@@ -24,7 +24,6 @@ const HomeMain = () => {
         {('0' + Math.floor((time / 1000) % 60)).slice(-2)}:
         {('0' + ((time / 10) % 100)).slice(-2)}
       </Text>
-      <Text></Text>
       <Pressable onPress={() => setRunning(true)}>
         <Text>Start</Text>
       </Pressable>
