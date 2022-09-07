@@ -19,19 +19,22 @@ const HomeMain = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={{fontSize: 30}}>
+      <Text style={styles.timeText}>
         {('0' + Math.floor((time / 60000) % 60)).slice(-2)}:
         {('0' + Math.floor((time / 1000) % 60)).slice(-2)}:
         {('0' + ((time / 10) % 100)).slice(-2)}
       </Text>
-      <Pressable onPress={() => setRunning(true)}>
-        <Text>Start</Text>
+      {/* Start 버튼 */}
+      <Pressable onPress={() => setRunning(true)} style={styles.btn}>
+        <Text style={styles.btnText}>Start</Text>
       </Pressable>
-      <Pressable onPress={() => setRunning(false)}>
-        <Text>Stop</Text>
+      {/* Stop 버튼 */}
+      <Pressable onPress={() => setRunning(false)} style={styles.btn}>
+        <Text style={styles.btnText}>Stop</Text>
       </Pressable>
-      <Pressable onPress={() => setTime(0)}>
-        <Text>Reset</Text>
+      {/* Reset 버튼 */}
+      <Pressable onPress={() => setTime(0)} style={styles.btn}>
+        <Text style={styles.btnText}>Reset</Text>
       </Pressable>
     </SafeAreaView>
   );
@@ -44,6 +47,26 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  timeText: {
+    fontSize: 60,
+    marginBottom: 20,
+    color: '#666666',
+    fontWeight: '500',
+  },
+  btn: {
+    backgroundColor: '#06c619',
+    width: 120,
+    height: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 10,
+    marginTop: 15,
+  },
+  btnText: {
+    color: '#ffffff',
+    fontWeight: 'bold',
+    fontSize: 17,
   },
 });
 
